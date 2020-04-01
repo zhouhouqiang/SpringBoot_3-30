@@ -4,13 +4,14 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
 
 import com.example.springBootDemo.modules.test.vo.ConfigBean;
 
-@RestController
+@Controller
 @RequestMapping("/test")
 public class TestController {
 
@@ -35,6 +36,12 @@ public class TestController {
 
 	@Autowired
 	private ConfigBean configBean;
+
+	@RequestMapping("/index")
+	public String testIndexPage(ModelMap modelMap) {
+		modelMap.addAttribute("template", "test/index");
+		return "index";
+	}
 
 	@RequestMapping("/log")
 	@ResponseBody
