@@ -57,7 +57,7 @@ public class CountryServiceImpl implements CountryService {
 	@Override
 	public City updateCity(City city) {
 		countrydao.updateCity(city);
-		int i = 1 / 0;
+		//	int i = 1 / 0;
 		return city;
 	}
 

@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@AutoConfigureAfter({ WebMvcAutoConfiguration.class }) //配置顺序
+@AutoConfigureAfter({ WebMvcAutoConfiguration.class }) //配置顺序，覆盖掉
 public class WebServerConfig {
 
 	@Bean

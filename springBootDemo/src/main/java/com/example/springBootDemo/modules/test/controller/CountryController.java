@@ -60,7 +60,7 @@ public class CountryController {
 	/**
 	 * 127.0.0.1:8085/city
 	 * {"cityName":"aaa","localCityName":"AAA","countryId":"111","dateCreated":"2020-4-1
-	 * 15:37:20"}
+	 * 15:37:20"} json格式
 	 */
 	//@RequestMapping(value = "/city", method = RequestMethod.POST, consumes = "application/json")
 	@PostMapping(value = "/city", consumes = "application/json")
@@ -70,9 +70,10 @@ public class CountryController {
 	}
 
 	/**
-	 * 127.0.0.1:8085/city form
+	 * 127.0.0.1:8085/city form form表单
 	 */
 	@PutMapping(value = "/city", consumes = "application/x-www-form-urlencoded")
+	//@PostMapping(value = "/city/edit", consumes = "application/x-www-form-urlencoded")
 	public City updateCity(@ModelAttribute City city) {
 		countryService.updateCity(city);
 		return city;
